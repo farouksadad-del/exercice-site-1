@@ -53,3 +53,9 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Fond du header au défilement
+const topbar = document.querySelector(".topbar");
+const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 20);
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();

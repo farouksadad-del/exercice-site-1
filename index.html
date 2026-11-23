@@ -5,17 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Abdellah Elghazi — Formations IA & Python</title>
   <meta name="description" content="Abdellah Elghazi, professeur d'Intelligence Artificielle et de Python. Formations pratiques pour particuliers et équipes. Contact : 06 60 66 59 52.">
+  <link rel="icon" href="images/icons/python.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.15.38 2.35.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M7 12h10M10 17h4"/></symbol>
+</svg>
 
 <!-- ============ HEADER ============ -->
 <header class="topbar">
   <div class="topbar__inner">
-    <a href="#top" class="logo"><span class="logo__mark">✻</span> elghazi<span class="logo__dot">.ia</span></a>
+    <a href="#top" class="logo"><span class="logo__mark">✻</span>elghazi<span class="logo__dot">.ia</span></a>
 
     <nav class="nav" id="nav" aria-label="Navigation principale">
       <a href="#formations">Formations</a>
@@ -24,12 +31,13 @@
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="switch" role="tablist" aria-label="Type de public">
-      <button class="switch__btn" role="tab" data-mode="private" aria-selected="false">Particulier</button>
-      <button class="switch__btn is-on" role="tab" data-mode="team" aria-selected="true">Équipe</button>
+    <div class="topbar__right">
+      <div class="switch" role="tablist" aria-label="Type de public">
+        <button class="switch__btn" role="tab" data-mode="private" aria-selected="false">Particulier</button>
+        <button class="switch__btn is-on" role="tab" data-mode="team" aria-selected="true">Équipe</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
     </div>
-
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
 
@@ -44,72 +52,81 @@
     <aside class="hero__side">
       <article class="card card--agenda reveal">
         <div class="agenda">
-          <div class="agenda__head"><span class="agenda__filter">☰ Filtre</span><strong>Programme du jour</strong></div>
+          <div class="agenda__head"><span class="agenda__filter"><svg class="ico"><use href="#i-filter"/></svg>Filtre</span><strong>Programme du jour</strong></div>
           <div class="agenda__cols">
-            <div class="who"><span class="avatar av1">🐍</span> Python</div>
-            <div class="who"><span class="avatar av2">🤖</span> IA</div>
+            <div class="who"><img class="avatar" src="images/icons/python.png" alt="">Python</div>
+            <div class="who"><img class="avatar" src="images/icons/robot.png" alt="">IA</div>
           </div>
           <div class="agenda__grid">
-            <span class="t t1">17:00</span><span class="t t2">17:00</span>
-            <span class="t t3">18:00</span><span class="t t4">18:00</span>
-            <span class="t t5">19:00</span><span class="t t6">19:00</span>
+            <span class="t">17:00</span><span class="t">17:00</span>
+            <span class="t">18:00</span><span class="t">18:00</span>
+            <span class="t">19:00</span><span class="t">19:00</span>
             <div class="event">
-              <span class="event__tag">📞 Séance live</span>
-              <p>Créons votre premier agent IA</p>
+              <span class="event__tag"><svg class="ico"><use href="#i-phone"/></svg>Séance live</span>
+              <p>Créer votre premier agent IA</p>
               <small>18:15 – 19:30</small>
-              <div class="event__avs"><span class="avatar av1">A</span><span class="avatar av2">E</span></div>
+              <div class="event__avs"><span>A</span><span>E</span></div>
             </div>
           </div>
         </div>
         <h3>Apprenez en pratique,<br>avec un vrai professeur</h3>
-        <a href="#formations" class="btn btn--green">Voir les formations</a>
+        <a href="#formations" class="btn btn--green card__cta">Voir les formations</a>
       </article>
 
-      <article class="card card--prof reveal">
-        <div class="prof__top">
-          <div><span class="muted">Formation</span><strong class="prof__num">100 %<br>pratique</strong></div>
-          <a href="#apropos" class="round" aria-label="En savoir plus">↗</a>
+      <article class="card card--photo reveal">
+        <div class="photo__top">
+          <div><span class="muted">Formation</span><strong class="photo__big">100 %<br>pratique</strong></div>
+          <a href="#apropos" class="round" aria-label="En savoir plus"><svg class="ico"><use href="#i-arrow"/></svg></a>
         </div>
-        <img class="prof__img" src="images/etudiant.jpg" alt="Apprenant souriant qui suit un cours sur son ordinateur portable" loading="lazy">
-        <a href="tel:+212660665952" class="pill-dark">📞 06 60 66 59 52</a>
+        <img class="photo__img" src="images/etudiant.jpg" alt="Apprenant souriant qui suit un cours sur son ordinateur portable" loading="lazy">
+        <a href="tel:+212660665952" class="pill-dark"><svg class="ico"><use href="#i-phone"/></svg>06 60 66 59 52</a>
       </article>
     </aside>
 
     <!-- zone centrale -->
     <div class="hero__main">
       <h1 class="hero__title">
-        <span id="heroLine1">Maîtrisez l’IA</span><span class="emoji">🍃</span><br>
-        <span id="heroLine2">&amp; Python</span> <span class="emoji">🌼</span> <span>pour réussir</span>
+        <span class="line">Maîtrisez l’IA <img class="deco deco--leaf" src="images/icons/leaf.png" alt=""></span>
+        <span class="line"><img class="deco deco--flower" src="images/icons/fleur.png" alt=""> &amp; Python</span>
+        <span class="line">pour réussir</span>
       </h1>
       <p class="hero__sub" id="heroSub">Formations pratiques en Intelligence Artificielle et Python pour les équipes et entreprises qui veulent passer à l’action.</p>
 
       <div class="hero__cta">
-        <a href="#contact" class="btn btn--dark">Commencer <span class="btn__arrow">↗</span></a>
+        <a href="#contact" class="btn btn--dark">Commencer <span class="btn__arrow"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
         <a href="#formations" class="link">En savoir plus</a>
       </div>
 
       <article class="card card--tasks reveal">
-        <div class="tasks__head"><strong>Prochaines formations</strong><span>•••</span></div>
+        <div class="tasks__head"><strong>Prochaines formations</strong><span class="dots" aria-hidden="true">•••</span></div>
         <div class="task">
-          <span class="avatar av1">🐍</span>
+          <img class="task__av" src="images/icons/python.png" alt="">
           <div class="task__txt"><b>Python — du débutant à l’autonomie</b><small>Cours en ligne ou en présentiel</small></div>
           <span class="chip">Sur demande</span>
         </div>
         <div class="task">
-          <span class="avatar av2">🤖</span>
-          <div class="task__txt"><b>IA & Machine Learning — niveau pratique</b><small>Projets concrets, suivi personnalisé</small></div>
+          <img class="task__av" src="images/icons/robot.png" alt="">
+          <div class="task__txt"><b>IA &amp; Machine Learning — niveau pratique</b><small>Projets concrets, suivi personnalisé</small></div>
           <a class="btn btn--green btn--sm" href="https://wa.me/212660665952?text=Bonjour%20Abdellah%2C%20je%20souhaite%20m%27inscrire%20%C3%A0%20votre%20formation%20IA." target="_blank" rel="noopener">S’inscrire</a>
         </div>
       </article>
     </div>
   </div>
 
-  <svg class="hills" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 150 C140 90 260 100 380 140 C520 190 640 70 800 100 C960 130 1080 60 1220 100 C1320 128 1390 110 1440 96 L1440 220 L0 220Z" fill="#6fa84a"/>
-    <path d="M0 180 C160 130 300 170 460 160 C620 150 700 120 860 150 C1020 180 1160 130 1300 160 C1370 175 1410 170 1440 160 L1440 220 L0 220Z" fill="#4f8a35"/>
-    <path d="M0 205 C200 180 380 200 560 195 C760 190 900 175 1100 195 C1250 208 1360 195 1440 190 L1440 220 L0 220Z" fill="#37702a"/>
+  <svg class="hills" viewBox="0 0 1440 240" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cc46a"/><stop offset="1" stop-color="#5e9c43"/></linearGradient>
+      <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5f9f42"/><stop offset="1" stop-color="#3f7e2e"/></linearGradient>
+      <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f7f2c"/><stop offset="1" stop-color="#2d6322"/></linearGradient>
+    </defs>
+    <path d="M0 140 C140 80 260 92 380 128 C520 172 640 62 800 92 C960 122 1080 52 1220 92 C1320 120 1390 100 1440 88 L1440 240 L0 240Z" fill="url(#g1)"/>
+    <path d="M0 176 C160 126 300 166 460 156 C620 146 700 116 860 146 C1020 176 1160 126 1300 156 C1370 170 1410 166 1440 156 L1440 240 L0 240Z" fill="url(#g2)"/>
+    <path d="M0 206 C200 182 380 202 560 196 C760 190 900 176 1100 196 C1250 208 1360 196 1440 190 L1440 240 L0 240Z" fill="url(#g3)"/>
   </svg>
 </section>
+
+<!-- ============ CONTENU (feuille claire) ============ -->
+<div class="sheet">
 
 <!-- ============ FORMATIONS ============ -->
 <section class="section" id="formations">
@@ -119,45 +136,45 @@
 
     <div class="cards">
       <article class="fcard reveal">
-        <span class="fcard__ico" style="--c:#ffd24a">🐍</span>
+        <span class="fcard__ico" style="--c:#fff1c2"><img src="images/icons/python.png" alt=""></span>
         <h3>Python — Fondamentaux</h3>
         <p>Variables, boucles, fonctions, fichiers, POO. Une base solide pour tout projet de programmation ou d’IA.</p>
         <ul><li>Niveau débutant</li><li>Exercices guidés</li><li>Mini-projets</li></ul>
-        <a class="fcard__cta" href="#contact" data-subject="Python — Fondamentaux">Je m’inscris →</a>
+        <a class="fcard__cta" href="#contact" data-subject="Python — Fondamentaux">Je m’inscris <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="fcard reveal">
-        <span class="fcard__ico" style="--c:#9fe3b4">📊</span>
+        <span class="fcard__ico" style="--c:#dcf5e5"><img src="images/icons/data.png" alt=""></span>
         <h3>Python pour la Data</h3>
         <p>NumPy, Pandas, Matplotlib : nettoyer, analyser et visualiser des données réelles pour décider mieux.</p>
         <ul><li>Analyse de données</li><li>Visualisation</li><li>Cas pratiques</li></ul>
-        <a class="fcard__cta" href="#contact" data-subject="Python pour la Data">Je m’inscris →</a>
+        <a class="fcard__cta" href="#contact" data-subject="Python pour la Data">Je m’inscris <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="fcard reveal">
-        <span class="fcard__ico" style="--c:#a9d2ff">🧠</span>
+        <span class="fcard__ico" style="--c:#ffe1ea"><img src="images/icons/ml.png" alt=""></span>
         <h3>Machine Learning</h3>
         <p>Régression, classification, évaluation de modèles avec scikit-learn. Comprenez ce que vous construisez.</p>
         <ul><li>Algorithmes clés</li><li>Scikit-learn</li><li>Projet de A à Z</li></ul>
-        <a class="fcard__cta" href="#contact" data-subject="Machine Learning">Je m’inscris →</a>
+        <a class="fcard__cta" href="#contact" data-subject="Machine Learning">Je m’inscris <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="fcard reveal">
-        <span class="fcard__ico" style="--c:#ffb8a3">✨</span>
+        <span class="fcard__ico" style="--c:#e4efff"><img src="images/icons/genai.png" alt=""></span>
         <h3>IA générative &amp; Agents</h3>
         <p>ChatGPT, prompts efficaces, automatisations et agents IA pour gagner du temps chaque jour.</p>
         <ul><li>Prompt engineering</li><li>Agents &amp; outils</li><li>Automatisation</li></ul>
-        <a class="fcard__cta" href="#contact" data-subject="IA générative & Agents">Je m’inscris →</a>
+        <a class="fcard__cta" href="#contact" data-subject="IA générative &amp; Agents">Je m’inscris <svg class="ico"><use href="#i-arrow"/></svg></a>
       </article>
     </div>
   </div>
 </section>
 
 <!-- ============ AVANTAGES ============ -->
-<section class="section section--tint" id="avantages">
+<section class="section" id="avantages">
   <div class="wrap">
     <p class="eyebrow">Avantages</p>
-    <h2 class="h2">Pourquoi se former <em>avec Abdellah</em> ?</h2>
+    <h2 class="h2">Pourquoi se former <em>avec Abdellah</em>&nbsp;?</h2>
 
     <div class="bento">
       <article class="b b--yellow reveal">
@@ -177,8 +194,8 @@
       </article>
       <article class="b b--dark reveal">
         <span class="b__n">04</span>
-        <h3>Des compétences qui servent</h3>
-        <p>Python et IA sont parmi les compétences les plus demandées : investissez dans votre avenir professionnel.</p>
+        <h3>Des compétences utiles</h3>
+        <p>Python et IA sont parmi les compétences les plus demandées : investissez dans votre avenir.</p>
       </article>
     </div>
   </div>
@@ -188,7 +205,8 @@
 <section class="section" id="apropos">
   <div class="wrap about">
     <div class="about__photo reveal">
-      <img src="images/code.jpg" alt="Code Python et web affiché sur un ordinateur portable" loading="lazy">
+      <img src="images/code.jpg" alt="Code affiché sur un ordinateur portable" loading="lazy">
+      <span class="about__badge"><img src="images/icons/python.png" alt="">Python · IA · Data</span>
     </div>
     <div class="about__txt reveal">
       <p class="eyebrow">À propos</p>
@@ -196,21 +214,23 @@
       <p>Passionné par la programmation et l’intelligence artificielle, Abdellah transmet ses connaissances avec des explications simples, des exemples concrets et beaucoup de pratique.</p>
       <p>Que vous soyez étudiant, professionnel en reconversion ou responsable d’équipe, ses formations vous donnent les outils pour comprendre l’IA, automatiser vos tâches et créer vos propres projets.</p>
       <div class="about__cta">
-        <a href="#contact" class="btn btn--dark">Réserver une séance <span class="btn__arrow">↗</span></a>
-        <a href="tel:+212660665952" class="link">06 60 66 59 52</a>
+        <a href="#contact" class="btn btn--dark">Réserver une séance <span class="btn__arrow"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+        <a href="tel:+212660665952" class="link link--icon"><svg class="ico"><use href="#i-phone"/></svg>06 60 66 59 52</a>
       </div>
     </div>
   </div>
 </section>
+
+</div>
 
 <!-- ============ CONTACT ============ -->
 <section class="section contact" id="contact">
   <div class="wrap contact__grid">
     <div class="reveal">
       <p class="eyebrow">Contact</p>
-      <h2 class="h2">Prêt à <em>commencer</em> ? Parlons de votre projet.</h2>
+      <h2 class="h2">Prêt à <em>commencer</em>&nbsp;? Parlons de votre projet.</h2>
       <p class="lead">Écrivez-moi ou appelez directement. Je réponds rapidement pour vous conseiller la formation adaptée.</p>
-      <a href="tel:+212660665952" class="phone">📞 06 60 66 59 52</a>
+      <a href="tel:+212660665952" class="phone"><span class="phone__ico"><svg class="ico"><use href="#i-phone"/></svg></span>06 60 66 59 52</a>
       <a href="https://wa.me/212660665952" target="_blank" rel="noopener" class="btn btn--green">Écrire sur WhatsApp</a>
     </div>
 
@@ -221,12 +241,12 @@
           <option>Python — Fondamentaux</option>
           <option>Python pour la Data</option>
           <option>Machine Learning</option>
-          <option>IA générative & Agents</option>
+          <option>IA générative &amp; Agents</option>
           <option>Autre / je ne sais pas encore</option>
         </select>
       </label>
       <label>Message<textarea name="message" rows="4" placeholder="Votre niveau, vos objectifs, vos disponibilités…"></textarea></label>
-      <button class="btn btn--dark" type="submit">Envoyer via WhatsApp <span class="btn__arrow">↗</span></button>
+      <button class="btn btn--dark" type="submit">Envoyer via WhatsApp <span class="btn__arrow"><svg class="ico"><use href="#i-arrow"/></svg></span></button>
     </form>
   </div>
 </section>
@@ -235,11 +255,12 @@
 
 <footer class="footer">
   <div class="footer__inner">
-    <a href="#top" class="logo"><span class="logo__mark">✻</span> elghazi<span class="logo__dot">.ia</span></a>
-    <p>© <span id="year"></span> Abdellah Elghazi — Professeur IA &amp; Python · <a href="tel:+212660665952">06 60 66 59 52</a> · Photos : <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></p>
+    <a href="#top" class="logo"><span class="logo__mark">✻</span>elghazi<span class="logo__dot">.ia</span></a>
+    <p>© <span id="year"></span> Abdellah Elghazi — Professeur IA &amp; Python · <a href="tel:+212660665952">06 60 66 59 52</a></p>
+    <p class="credits">Photos : <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> · Icônes : <a href="https://github.com/microsoft/fluentui-emoji" target="_blank" rel="noopener">Fluent Emoji (MIT)</a></p>
   </div>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
